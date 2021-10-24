@@ -1,0 +1,16 @@
+package com.voitekhov.springsecurityproject.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/users")
+public class User {
+    @GetMapping()
+    public String testCall() {
+        return "Test string";
+    }
+
+
+}
