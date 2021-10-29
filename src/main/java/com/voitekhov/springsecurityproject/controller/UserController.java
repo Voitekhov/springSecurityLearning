@@ -11,6 +11,4 @@ public class UserController {
     public String testCall() {
         return "Test string";
     }
-
-
 }

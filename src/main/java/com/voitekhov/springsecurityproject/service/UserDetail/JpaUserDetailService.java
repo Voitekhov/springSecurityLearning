@@ -1,4 +1,4 @@
-package com.voitekhov.springsecurityproject.service;
+package com.voitekhov.springsecurityproject.service.UserDetail;
 
 import com.voitekhov.springsecurityproject.model.SecurityUser;
 import com.voitekhov.springsecurityproject.model.User;
