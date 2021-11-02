@@ -1,9 +1,9 @@
 package com.voitekhov.springsecurityproject.configuration;
 
-import com.voitekhov.springsecurityproject.filter.CustomFilter;
-import com.voitekhov.springsecurityproject.service.AuthenticationProvider.CustomAuthenticationProvider;
-import com.voitekhov.springsecurityproject.service.AuthenticationProvider.HeaderAuthenticationProvider;
-import com.voitekhov.springsecurityproject.service.UserDetail.JpaUserDetailService;
+import com.voitekhov.springsecurityproject.security.AuthenticationProvider.OptAuthenticationProvider;
+import com.voitekhov.springsecurityproject.security.AuthenticationProvider.UsernamePasswordAuthenticationProvider;
+import com.voitekhov.springsecurityproject.security.UserDetail.JpaUserDetailService;
+import com.voitekhov.springsecurityproject.security.filter.CustomFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,10 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     CustomFilter customFilter;
 
     @Autowired
-    HeaderAuthenticationProvider headerAuthenticationProvider;
+    UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider;
+
+    @Autowired
+    OptAuthenticationProvider optAuthenticationProvider;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -36,7 +39,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(headerAuthenticationProvider);
+        auth.authenticationProvider(usernamePasswordAuthenticationProvider)
+                .authenticationProvider(optAuthenticationProvider);
     }
 
 

@@ -1,6 +1,7 @@
-package com.voitekhov.springsecurityproject.service.AuthenticationProvider;
+package com.voitekhov.springsecurityproject.security.AuthenticationProvider;
 
-import com.voitekhov.springsecurityproject.model.SecurityUser;
+import com.voitekhov.springsecurityproject.security.authentication.UsernamePasswordAuthentication;
+import com.voitekhov.springsecurityproject.security.model.SecurityUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -12,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CustomAuthenticationProvider implements AuthenticationProvider {
+public class UsernamePasswordAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     UserDetailsService userDetailsService;
@@ -36,6 +37,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return UsernamePasswordAuthenticationToken.class.equals(authentication);
+        return UsernamePasswordAuthentication.class.equals(authentication);
     }
 }

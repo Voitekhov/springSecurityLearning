@@ -1,4 +1,4 @@
-package com.voitekhov.springsecurityproject.service.UserDetail;
+package com.voitekhov.springsecurityproject.security.UserDetail;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

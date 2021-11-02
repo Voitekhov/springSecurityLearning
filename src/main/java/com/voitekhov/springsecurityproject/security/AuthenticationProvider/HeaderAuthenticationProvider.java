@@ -1,6 +1,6 @@
-package com.voitekhov.springsecurityproject.service.AuthenticationProvider;
+package com.voitekhov.springsecurityproject.security.AuthenticationProvider;
 
-import com.voitekhov.springsecurityproject.model.CustomAuthentication;
+import com.voitekhov.springsecurityproject.security.authentication.UsernamePasswordAuthentication;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,6 +21,6 @@ public class HeaderAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return CustomAuthentication.class.equals(authentication);
+        return UsernamePasswordAuthentication.class.equals(authentication);
     }
 }

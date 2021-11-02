@@ -1,5 +1,6 @@
-package com.voitekhov.springsecurityproject.model;
+package com.voitekhov.springsecurityproject.security.model;
 
+import com.voitekhov.springsecurityproject.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

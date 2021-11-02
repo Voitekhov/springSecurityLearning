@@ -1,6 +1,6 @@
-package com.voitekhov.springsecurityproject.service.UserDetail;
+package com.voitekhov.springsecurityproject.security.UserDetail;
 
-import com.voitekhov.springsecurityproject.model.SecurityUser;
+import com.voitekhov.springsecurityproject.security.model.SecurityUser;
 import com.voitekhov.springsecurityproject.model.User;
 import com.voitekhov.springsecurityproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
